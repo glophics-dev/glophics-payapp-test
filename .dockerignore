@@ -1,0 +1,13 @@
+.git
+.gitignore
+.gradle
+.idea
+build
+out
+*.iml
+*.md
+gradle.properties
+*.mv.db
+*.trace.db
+Dockerfile
+.dockerignore
