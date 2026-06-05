@@ -76,7 +76,7 @@ public class PayappSvImp implements PayappSv
 		result.setMulNo (payList.getMulNo ());
 		result.setPayNo (savedPayList.getNo ());
 
-		String payUrl = payappProperty.getUrl () + "p/" + url;
+		String payUrl = payappProperty.getBaseUrl () + "p/" + url;
 
 		result.setPayUrl (payUrl);
 
@@ -206,7 +206,7 @@ public class PayappSvImp implements PayappSv
 			urlParameters.add (new BasicNameValuePair ("var1", payList.getVar1 ()));
 			urlParameters.add (new BasicNameValuePair ("var2", payList.getVar2 ()));
 			urlParameters.add (new BasicNameValuePair ("mul_no", payList.getMulNo ()));
-			urlParameters.add (new BasicNameValuePair ("payurl", payappProperty.getUrl () + "p/" + payList.getUrl ()));
+			urlParameters.add (new BasicNameValuePair ("payurl", payappProperty.getBaseUrl () + "p/" + payList.getUrl ()));
 			urlParameters.add (new BasicNameValuePair ("feedbacktype", "0"));
 			urlParameters.add (new BasicNameValuePair ("pay_addr", ""));
 			urlParameters.add (new BasicNameValuePair ("payauthcode", "364910"));
@@ -224,7 +224,7 @@ public class PayappSvImp implements PayappSv
 
 			if (payList.getPayType () == 4 || payList.getPayType () == 1 || payList.getPayType () == 3)
 			{
-				urlParameters.add (new BasicNameValuePair ("csturl", payappProperty.getUrl () + "c/" + payList.getUrl ()));
+				urlParameters.add (new BasicNameValuePair ("csturl", payappProperty.getBaseUrl () + "c/" + payList.getUrl ()));
 				urlParameters.add (new BasicNameValuePair ("card_name", payList.getPayInfo1 ()));
 				urlParameters.add (new BasicNameValuePair ("noinf", "0"));
 

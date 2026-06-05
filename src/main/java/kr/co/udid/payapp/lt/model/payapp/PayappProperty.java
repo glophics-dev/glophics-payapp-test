@@ -18,4 +18,17 @@ public class PayappProperty
 	private String url;
 
 	private String name;
+
+	/**
+	 * Base url guaranteed to end with a single trailing slash, so callers can
+	 * safely append a path like "p/{url}" regardless of how the configured
+	 * value is set (e.g. the Render env var omits the trailing slash).
+	 */
+	public String getBaseUrl ()
+	{
+		if (url == null || url.isEmpty ())
+			return "";
+
+		return url.endsWith ("/") ? url : url + "/";
+	}
 }
